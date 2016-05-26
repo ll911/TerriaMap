@@ -17,7 +17,7 @@ RUN \
 
 ADD . /usr/src/app
 RUN npm install
-RUN gulp release
+RUN gulp lint
 
 RUN useradd -ms /bin/bash tmap \
   && chown -R tmap:0 /usr/src/app \
@@ -26,4 +26,4 @@ RUN useradd -ms /bin/bash tmap \
 USER tmap
 WORKDIR /usr/src/app
 EXPOSE 3001
-CMD npm start
+CMD npm start && gulp watch
