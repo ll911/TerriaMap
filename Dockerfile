@@ -17,14 +17,13 @@ RUN \
 
 ADD . /usr/src/app
 RUN npm install
-RUN npm start
-RUN gulp watch
+RUN gulp release
 
-RUN useradd -ms /bin/bash terriamp \
-  && chown -R terriamp:0 /usr/src/app \
+RUN useradd -ms /bin/bash tmap \
+  && chown -R tmap:0 /usr/src/app \
   && chmod -R 770 /usr/src/app
 
-USER terriamp
+USER tmap
 WORKDIR /usr/src/app
 EXPOSE 3001
 CMD npm start
