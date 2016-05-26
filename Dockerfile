@@ -1,5 +1,5 @@
 # Docker image for forked primary national map application server from australia gov
-FROM node:0.10-onbuild
+FROM node:onbuild
 MAINTAINER leo.lou@gov.bc.ca
 
 RUN \
