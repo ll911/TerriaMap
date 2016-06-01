@@ -17,7 +17,7 @@ RUN \
 
 ADD . /usr/src/app
 RUN npm install
-RUN gulp lint
+RUN gulp
 
 RUN useradd -ms /bin/bash tmap \
   && chown -R tmap:0 /usr/src/app \
