@@ -4,8 +4,7 @@ MAINTAINER leo.lou@gov.bc.ca
 #RUN rm -rf /usr/lib/node_modules && rm -rf /usr/local/{bin/{node,npm},lib/node_modules/npm,lib/node,share/man/*/node.*} && \
 #    curl -sL https://rpm.nodesource.com/setup_6.x | bash -
 RUN yum install -y epel-release nodejs npm
-RUN rpm -Uvh http://download.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm && \
-    yum install -y centos-release-scl-rh && \
+RUN yum install -y centos-release-scl-rh && \
     INSTALL_PKGS="gdal" && \
     ln -s /usr/lib/node_modules/nodemon/bin/nodemon.js /usr/bin/nodemon && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS --enablerepo=epel && \
