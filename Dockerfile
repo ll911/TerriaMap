@@ -1,7 +1,8 @@
 FROM openshift/base-centos7
 MAINTAINER leo.lou@gov.bc.ca
 
-RUN yum erase -y /etc/yum.repos.d/nodesource-el.repo && curl -sL https://rpm.nodesource.com/setup_6.x | bash -
+RUN rm -rf /usr/lib/node_modules && rm -rf /usr/local/{bin/{node,npm},lib/node_modules/npm,lib/node,share/man/*/node.*} && \
+    curl -sL https://rpm.nodesource.com/setup_6.x | bash -
 RUN yum install -y nodejs npm
 ENV NODEJS_VERSION=6
 
