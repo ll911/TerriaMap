@@ -14,7 +14,7 @@ RUN yum install -y centos-release-scl-rh epel-release && \
 RUN npm install -g gulp serve    
 RUN git config --global url.https://github.com/.insteadOf git://github.com/
 RUN rm -rf /opt/app-root/*
-RUN cd /opt/app-root && git clone https://github.com/TerriaJS/TerriaMap.git .
+RUN git clone https://github.com/TerriaJS/TerriaMap.git /opt/app-root/src && cp -r /opt/app-root/src /opt/app-root && rm -rf /opt/app-root/src
 RUN wget -O /opt/app-root/wwwroot/init/terria.json https://raw.githubusercontent.com/ll911/TerriaMap/master/wwwroot/init/terria.json
 
 RUN npm install
