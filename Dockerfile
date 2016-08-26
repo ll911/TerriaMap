@@ -20,5 +20,5 @@ RUN gulp
 WORKDIR /opt/app-root
 RUN chown -R 1001:0 /opt/app-root && chmod -R ug+rwx /opt/app-root
 USER 1001
-EXPOSE 8080
+EXPOSE 3001
 CMD node node_modules/terriajs-server/lib/app.js
