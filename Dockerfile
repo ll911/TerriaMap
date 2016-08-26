@@ -10,12 +10,13 @@ RUN yum install -y centos-release-scl-rh epel-release && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS --enablerepo=epel && \
     rpm -V $INSTALL_PKGS && \
     yum clean all -y
-    
+
+RUN npm install -g gulp serve    
 RUN git config --global url.https://github.com/.insteadOf git://github.com/
 RUN rm -rf /opt/app-root/* && \ 
-  git clone https://github.com/TerriaJS/TerriaMap /opt/app-root && \
-  wget -O /opt/app-root/wwwroot/init/terria.json https://raw.githubusercontent.com/ll911/TerriaMap/master/wwwroot/init/terria.json && \
-  npm install -g gulp serve
+  git clone https://github.com/TerriaJS/TerriaMap.git /opt/app-root
+RUN wget -O /opt/app-root/wwwroot/init/terria.json https://raw.githubusercontent.com/ll911/TerriaMap/master/wwwroot/init/terria.json
+
 RUN npm install
 RUN gulp
 
