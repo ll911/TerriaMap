@@ -2,7 +2,7 @@ FROM openshift/base-centos7
 MAINTAINER leo.lou@gov.bc.ca
 
 RUN rm -rf /usr/lib/node_modules && rm -rf /usr/local/{bin/{node,npm},lib/node_modules/npm,lib/node,share/man/*/node.*} && \
-    curl -sL https://rpm.nodesource.com/setup_6.x | bash -
+    curl -sL https://rpm.nodesource.com/setup_5.x | bash -
 RUN yum install -y nodejs
 RUN yum install -y centos-release-scl-rh epel-release && \
     INSTALL_PKGS="gdal" && \
