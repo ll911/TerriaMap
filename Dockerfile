@@ -5,7 +5,7 @@ RUN rm -rf /usr/lib/node_modules && rm -rf /usr/local/{bin/{node,npm},lib/node_m
     curl -sL https://rpm.nodesource.com/setup_6.x | bash -
 RUN yum install -y nodejs
 RUN yum install -y centos-release-scl-rh epel-release && \
-    INSTALL_PKGS="gdal git" && \
+    INSTALL_PKGS="gdal git wget" && \
     ln -s /usr/lib/node_modules/nodemon/bin/nodemon.js /usr/bin/nodemon && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS --enablerepo=epel && \
     rpm -V $INSTALL_PKGS && \
