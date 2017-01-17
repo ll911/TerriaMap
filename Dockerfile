@@ -20,7 +20,7 @@ WORKDIR /opt/tmap
 RUN npm install
 RUN gulp
 
-RUN chown -R 1001:0 /opt/app-root && chmod -R ug+rwx /opt/tmap
+RUN chown -R 1001:0 /opt/tmap && chmod -R ug+rwx /opt/tmap
 USER 1001
 EXPOSE 3001
 CMD node node_modules/terriajs-server/lib/app.js --config-file devserverconfig.json
