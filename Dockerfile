@@ -18,7 +18,7 @@ RUN git clone https://github.com/TerriaJS/TerriaMap.git /tmp/src && cp -r /tmp/s
 RUN wget -O /opt/tmap/wwwroot/init/terria.json https://raw.githubusercontent.com/ll911/TerriaMap/master/wwwroot/init/terria.json
 WORKDIR /opt/tmap
 RUN npm install
-RUN gulp
+RUN gulp lint docs release
 
 RUN chown -R 1001:0 /opt/tmap && chmod -R ug+rwx /opt/tmap
 USER 1001
