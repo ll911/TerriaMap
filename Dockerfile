@@ -19,7 +19,7 @@ RUN npm install -g gulp serve && \
 
 WORKDIR /opt/tmap
 RUN npm install && \
-    npm run gulp release
+    npm run gulp
 
 RUN chown -R 1001:0 /opt/tmap && chmod -R ug+rwx /opt/tmap
 USER 1001
